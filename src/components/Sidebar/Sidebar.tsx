@@ -78,7 +78,7 @@ interface SidebarContentProps {
   onExpand?: () => void
 }
 
-function SidebarContent({ isCollapsed, onClose, onCollapse, onExpand }: SidebarContentProps) {
+function SidebarContent({ isCollapsed, onCollapse, onExpand }: SidebarContentProps) {
   return (
     <>
       {/* Logo */}

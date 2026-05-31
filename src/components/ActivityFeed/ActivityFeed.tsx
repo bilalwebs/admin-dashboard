@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { UserPlus, CreditCard, Package, ShoppingCart, AlertTriangle, User } from 'lucide-react'
 import { activities } from '../../data/dashboardData'
-import { cn, getInitials, timeAgo } from '../../utils/cn'
+import { cn, timeAgo } from '../../utils/cn'
 import type { Activity } from '../../types'
 
 const typeIcons: Record<Activity['type'], typeof User> = {
@@ -18,22 +18,6 @@ const typeColors: Record<Activity['type'], string> = {
   product: 'bg-amber-100 text-amber-600 dark:bg-amber-500/15 dark:text-amber-400',
   order: 'bg-blue-100 text-blue-600 dark:bg-blue-500/15 dark:text-blue-400',
   system: 'bg-red-100 text-red-600 dark:bg-red-500/15 dark:text-red-400',
-}
-
-const avatarColors = [
-  'from-indigo-500 to-purple-500',
-  'from-emerald-500 to-teal-500',
-  'from-amber-500 to-orange-500',
-  'from-rose-500 to-pink-500',
-  'from-blue-500 to-cyan-500',
-]
-
-function getAvatarColor(name: string) {
-  let hash = 0
-  for (let i = 0; i < name.length; i++) {
-    hash = name.charCodeAt(i) + ((hash << 5) - hash)
-  }
-  return avatarColors[Math.abs(hash) % avatarColors.length]
 }
 
 export function ActivityFeed() {
